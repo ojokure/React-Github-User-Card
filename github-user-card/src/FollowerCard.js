@@ -5,11 +5,11 @@ export default class FollowerCard extends React.Component {
     super(props);
   }
   render() {
-    const { users } = this.props;
+    const { followers } = this.props;
 
     return <div>
 
-        
+
     </div>;
   }
 }

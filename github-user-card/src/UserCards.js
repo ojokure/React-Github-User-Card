@@ -6,7 +6,6 @@ export default class UserCards extends React.Component {
   }
   render() {
     const { users } = this.props;
-
     return (
       <div>
         <div>
@@ -16,8 +15,9 @@ export default class UserCards extends React.Component {
             <h3>{users.name}</h3>
             <p>{users.login}</p>
             <p>Location: {users.location}</p>
-            <p>Followers: {users.followers_url}</p>
-            <p>Following: {users.followings_url}</p>
+            <p>
+              Profile: <a href={users.url}> {users.html_url}</a>
+            </p>
             <p>Bio: {users.bio}</p>
           </div>
         </div>

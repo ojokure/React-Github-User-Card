@@ -28,8 +28,8 @@ export default class App extends React.Component {
           <h1> REACT GITHUB USER-CARD</h1>
         </header>
         <div>
-          <Users />
-          <UserCards />
+          <Users users={this.state.data}/>
+          <UserCards users={this.state.data}/>
         </div>
       </div>
     );

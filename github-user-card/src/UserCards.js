@@ -7,19 +7,19 @@ export default class UserCards extends React.Component {
   render() {
     return (
       <div className="card">
-        {/* <img src={} />
+        <img src={} />
         <div>
-          <h3 class="name">{}</h3>
-          <p class="username">{}</p>
+          <h3 className="name">{}</h3>
+          <p className="username">{}</p>
           <p>Location: {}</p>
           <p>Profile:  
             <a href={}>{}</a>
           </p>
-          <p>Followers: {}</p>
-          <p>Following: {}</p>
-              <p>Bio: {users bio}</p>
+          {/* <p>Followers: {}</p> */}
+          {/* <p>Following: {}</p> */}
+              <p>Bio: {}</p>
 
-        </div> */}
+        </div>
       </div>
     );
   }

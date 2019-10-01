@@ -14,21 +14,19 @@ export default class App extends React.Component {
 
   componentDidMount() {
     axios.get("https://api.github.com/users/ojokure").then(res => {
-      debugger
       this.setState({
         data: res.data
-      });
+      })
     });
   }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <header>
           <h1> REACT GITHUB USER-CARD</h1>
         </header>
         <div>
-          <Users users={this.state.data}/>
           <UserCards users={this.state.data}/>
         </div>
       </div>

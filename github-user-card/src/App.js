@@ -35,7 +35,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <AppStyle>
         <header>
           <h1> GITHUB USER-CARD</h1>
         </header>
@@ -45,10 +45,16 @@ export default class App extends React.Component {
           <FollowerCard followers={this.state.followers} />
           </FollowersWrap>
         </div>
-      </div>
+      </AppStyle>
     );
   }
 }
+
+const AppStyle = styled.div`
+font-family:"ABeeZee";
+text-align: center;
+color:blue;
+`;
 const FollowersWrap = styled.div`
   display: grid;
   justify-content:space-between;

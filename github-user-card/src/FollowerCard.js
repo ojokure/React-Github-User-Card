@@ -13,7 +13,7 @@ export default class FollowerCard extends React.Component {
         {followers.map(el => (
           <div>
             <div>
-              <img src={el.avatar_url} />
+              <Img src={el.avatar_url} />
 
               <div>
                 <p>{el.login}</p>
@@ -29,13 +29,6 @@ export default class FollowerCard extends React.Component {
   }
 }
 
-// const FollowersWrap = styled.div`
-//   display: grid;
-//   justify-content:space-between;
-//   width: 90vw;
-//   min-height: 40vh;
-//   margin: 70px auto;
-//   background: #a9d3e9;
-//   padding: 15px;
-//   opacity: 0.95;
-// `;
+const Img = styled.img`
+border-radius:5%;
+`;

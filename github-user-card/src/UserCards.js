@@ -11,7 +11,7 @@ export default class UserCards extends React.Component {
     return (
       <div>
         <div>
-          <img src={users.avatar_url} />
+          <Img src={users.avatar_url} />
 
           <div>
             <h3>{users.name}</h3>
@@ -27,3 +27,7 @@ export default class UserCards extends React.Component {
     );
   }
 }
+
+const Img = styled.img`
+border-radius:5%;
+`;

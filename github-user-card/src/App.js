@@ -3,6 +3,7 @@ import "./App.css";
 import UserCards from "./UserCards";
 import FollowerCard from "./FollowerCard";
 import axios from "axios";
+import styled from "styled-components";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -40,9 +41,22 @@ export default class App extends React.Component {
         </header>
         <div>
           <UserCards users={this.state.users} />
+          <FollowersWrap>
           <FollowerCard followers={this.state.followers} />
+          </FollowersWrap>
         </div>
       </div>
     );
   }
 }
+const FollowersWrap = styled.div`
+  display: grid;
+  justify-content:space-between;
+  flex-direction:wrap;
+  width: 90vw;
+  min-height: 40vh;
+  margin: 70px auto;
+  background: #a9d3e9;
+  padding: 15px;
+  opacity: 0.95;
+`;

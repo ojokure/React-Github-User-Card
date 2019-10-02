@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 export default class FollowerCard extends React.Component {
   constructor(props) {
@@ -15,7 +16,6 @@ export default class FollowerCard extends React.Component {
               <img src={el.avatar_url} />
 
               <div>
-                <h3>{el.name}</h3>
                 <p>{el.login}</p>
                 <p>
                   Profile: <a href={el.url}> {el.html_url}</a>
@@ -28,3 +28,14 @@ export default class FollowerCard extends React.Component {
     );
   }
 }
+
+// const FollowersWrap = styled.div`
+//   display: grid;
+//   justify-content:space-between;
+//   width: 90vw;
+//   min-height: 40vh;
+//   margin: 70px auto;
+//   background: #a9d3e9;
+//   padding: 15px;
+//   opacity: 0.95;
+// `;

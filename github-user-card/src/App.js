@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import UserCards from "./UserCards";
 import FollowerCard from "./FollowerCard";
@@ -9,7 +8,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { users: {}, followers: [] };
+    this.state = { users: "", followers: [] };
   }
 
   // componentDidMount() {
@@ -21,27 +20,13 @@ export default class App extends React.Component {
   // }
 
   componentDidMount() {
-    const usersPromise = axios.get({
-      method: "get",
-      url: "https://api.github.com/users/ojokure",
-      auth: {
-        username: "ojokure",
-        password: "Anthonyojo1"
-      }
-    });
-    const followersPromise = axios.get({
-      method: "get",
-      url: "https://api.github.com/users/ojokure/followers",
-      auth: {
-        username: "ojokure",
-        password: "Anthonyojo1"
-      }
-    });
+    const usersPromise = axios.get("https://api.github.com/users/ojokure");
+    const followersPromise = axios.get("https://api.github.com/users/ojokure/followers");
     Promise.all([usersPromise, followersPromise]).then(
-      ({ usersAxiosRes, followersAxiosRes }) => {
+      (promiseApi) => {
         this.setState({
-          users: usersAxiosRes.data,
-          followers: followersAxiosRes.data
+          users: promiseApi[0].data,
+          followers: promiseApi[1].data
         });
       }
     );
@@ -51,7 +36,7 @@ export default class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <h1> REACT GITHUB USER-CARD</h1>
+          <h1> GITHUB USER-CARD</h1>
         </header>
         <div>
           <UserCards users={this.state.users} />

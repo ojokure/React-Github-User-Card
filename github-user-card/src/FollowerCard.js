@@ -7,9 +7,24 @@ export default class FollowerCard extends React.Component {
   render() {
     const { followers } = this.props;
 
-    return <div>
+    return (
+      <div>
+        {followers.map(el => (
+          <div>
+            <div>
+              <img src={el.avatar_url} />
 
-
-    </div>;
+              <div>
+                <h3>{el.name}</h3>
+                <p>{el.login}</p>
+                <p>
+                  Profile: <a href={el.url}> {el.html_url}</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
   }
 }
